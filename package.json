@@ -1,6 +1,6 @@
 {
-  "name": "@ccdilan/react-native-bluetooth-escpos-printer",
-  "version": "0.2.0",
+  "name": "@ccharliemagne/react-native-bluetooth-escpos-printer",
+  "version": "0.2.1",
   "description": "React-Native plugin for the bluetooth ESC/POS printers.",
   "main": "index.js",
   "scripts": {
@@ -13,8 +13,8 @@
     "Bluetooth",
     "Printer"
   ],
- "author": "Janus J K Lu",
- "maintainers": [
+  "author": "Janus J K Lu",
+  "maintainers": [
     {
       "name": "Ccdilan",
       "email": "ccdilan@gmail.com",
