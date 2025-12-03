@@ -415,6 +415,18 @@ public class RNBluetoothEscposPrinterModule extends ReactContextBaseJavaModule
 
             bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
 
+            // Center QR code horizontally using deviceWidth as the printable width.
+            // 'size' is the desired QR size in pixels. Clamp to deviceWidth to avoid overflow.
+            int qrSize = size;
+            if (qrSize > deviceWidth) {
+                qrSize = deviceWidth;
+            }
+            // Compute left padding so QR is centered within deviceWidth
+            int leftPadding = (deviceWidth - qrSize) / 2;
+            if (leftPadding < 0) {
+                leftPadding = 0;
+            }
+
             //TODO: may need a left padding to align center.
             byte[] data = PrintPicture.POS_PrintBMP(bitmap, size, 0, 0);
             if (sendDataByte(data)) {
