@@ -392,7 +392,8 @@ public class PrinterCommand {
         command[6] = (byte) ((bCodeData.length & 0xff00) >> 8);
         System.arraycopy(bCodeData, 0, command, 7, bCodeData.length);
 
-        return command;
+        byte[] alignCenter = POS_S_Align(1); // 1 = center alignment
+        return concatAll(alignCenter, command);
     }
 
     /**
